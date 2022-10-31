@@ -1,12 +1,9 @@
 pipeline{
     agent any
-    
-    environment{
-        PATH = "/opt/maven3/bin"
-    stages{
-        stage("Git Checkout"){
-            steps{
-                git credentialsId: 'gittojenk', url: 'https://github.com/hemapotruk/myweb.git'
+        stages{
+            stage("Git Checkout"){
+                steps{
+                    git credentialsId: 'gittojenk', url: 'https://github.com/hemapotruk/myweb.git'
             }
         }
         stage("Maven Build"){
